@@ -1,3 +1,4 @@
+// src/App.tsx — paste this fully
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Navbar from './components/Navbar';
@@ -5,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import Platform from './pages/Platform';
 import Inventory from './pages/Inventory';
+import Production from './pages/Production';
 import Sales from './pages/Sales';
 import Empties from './pages/Empties';
 import Hr from './pages/Hr';
@@ -20,10 +22,7 @@ function App() {
 
   return (
     <>
-      <Navbar 
-        menuOpen={menuOpen} 
-        setMenuOpen={setMenuOpen} 
-      />
+      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className="shell">
         <Sidebar
           currentPath={location.pathname}
@@ -35,6 +34,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/platform" element={<Platform />} />
             <Route path="/inventory" element={<Inventory />} />
+            <Route path="/production" element={<Production />} />
             <Route path="/sales" element={<Sales />} />
             <Route path="/empties" element={<Empties />} />
             <Route path="/hr" element={<Hr />} />
